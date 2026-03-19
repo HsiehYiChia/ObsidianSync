@@ -1,0 +1,25 @@
+filters:
+  and:
+    - file.links.containsAny("灣區 午餐清單.base")
+views:
+  - type: list
+    name: All
+    order:
+      - file.name
+      - tags
+    sort:
+      - property: file.tags
+        direction: ASC
+    markers: number
+    indentProperties: true
+  - type: list
+    name: 低預算
+    filters:
+      and:
+        - note["Price Point"].containsAny("$15", "$20")
+    order:
+      - file.name
+      - Price Point
+      - tags
+    markers: number
+    indentProperties: true

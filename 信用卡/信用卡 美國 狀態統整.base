@@ -1,0 +1,18 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.hasLink("信用卡 美國 狀態統整.base")
+    order:
+      - file.name
+      - Rewards
+      - Bank
+      - Account Status
+      - Approved date
+    sort:
+      - property: Approved date
+        direction: ASC
+    columnSize:
+      note.Rewards: 301
+      note.Bank: 151
